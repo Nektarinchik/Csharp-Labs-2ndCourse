@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<companies>
+  <company name="Company1">
+    <departments>
+      <department name="HR">
+        <number_of_staff>10</number_of_staff>
+        <head_of_department name="Name1.1" surname="Surname1.1" />
+      </department>
+      <department name="Accounting">
+        <number_of_staff>15</number_of_staff>
+        <head_of_department name="Name1.2" surname="Surname1.2" />
+      </department>
+      <department name="Planning and economic">
+        <number_of_staff>5</number_of_staff>
+        <head_of_department name="Name1.3" surname="Surname1.3" />
+      </department>
+    </departments>
+  </company>
+  <company name="Company2">
+    <departments>
+      <department name="HR">
+        <number_of_staff>7</number_of_staff>
+        <head_of_department name="Name2.1" surname="Surname2.1" />
+      </department>
+      <department name="Accounting">
+        <number_of_staff>12</number_of_staff>
+        <head_of_department name="Name2.2" surname="Surname2.2" />
+      </department>
+      <department name="Planning and economic">
+        <number_of_staff>3</number_of_staff>
+        <head_of_department name="Name2.3" surname="Surname2.3" />
+      </department>
+    </departments>
+  </company>
+  <company name="Company3">
+    <departments>
+      <department name="HR">
+        <number_of_staff>15</number_of_staff>
+        <head_of_department name="Name3.1" surname="Surname3.1" />
+      </department>
+      <department name="Accounting">
+        <number_of_staff>20</number_of_staff>
+        <head_of_department name="Name3.2" surname="Surname3.2" />
+      </department>
+      <department name="Planning and economic">
+        <number_of_staff>10</number_of_staff>
+        <head_of_department name="Name3.3" surname="Surname3.3" />
+      </department>
+    </departments>
+  </company>
+  <company name="Company4">
+    <departments>
+      <department name="HR">
+        <number_of_staff>12</number_of_staff>
+        <head_of_department name="Name4.1" surname="Surname4.1" />
+      </department>
+      <department name="Accounting">
+        <number_of_staff>17</number_of_staff>
+        <head_of_department name="Name4.2" surname="Surname4.2" />
+      </department>
+      <department name="Planning and economic">
+        <number_of_staff>7</number_of_staff>
+        <head_of_department name="Name4.3" surname="Surname4.3" />
+      </department>
+    </departments>
+  </company>
+  <company name="Company5">
+    <departments>
+      <department name="HR">
+        <number_of_staff>20</number_of_staff>
+        <head_of_department name="Name5.1" surname="Surname5.1" />
+      </department>
+      <department name="Accounting">
+        <number_of_staff>25</number_of_staff>
+        <head_of_department name="Name5.2" surname="Surname5.2" />
+      </department>
+      <department name="Planning and economic">
+        <number_of_staff>15</number_of_staff>
+        <head_of_department name="Name5.3" surname="Surname5.3" />
+      </department>
+    </departments>
+  </company>
+</companies>

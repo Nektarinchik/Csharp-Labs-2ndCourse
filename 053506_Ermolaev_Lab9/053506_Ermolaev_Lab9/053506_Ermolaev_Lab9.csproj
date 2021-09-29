@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>_053506_Ermolaev_Lab9</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\053506_Ermolaev_Lab9.Domain\053506_Ermolaev_Lab9.Domain.csproj" />
+    <ProjectReference Include="..\Serializer.Domain\Serializer.Domain.csproj" />
+    <ProjectReference Include="..\Serializer\Serializer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Files\" />
+  </ItemGroup>
+
+</Project>

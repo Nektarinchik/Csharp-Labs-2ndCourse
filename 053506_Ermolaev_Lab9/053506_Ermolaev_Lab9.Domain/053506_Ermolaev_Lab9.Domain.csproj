@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>_053506_Ermolaev_Lab9.Domain</RootNamespace>
+  </PropertyGroup>
+
+</Project>
