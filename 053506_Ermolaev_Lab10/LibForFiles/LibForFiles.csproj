@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\053506_Ermolaev_Lab10\053506_Ermolaev_Lab10.csproj" />
+  </ItemGroup>
+
+</Project>
