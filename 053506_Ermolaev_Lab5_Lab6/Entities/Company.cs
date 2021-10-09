@@ -10,68 +10,68 @@ namespace _053506_Ermolaev_Lab5
 
         public delegate void NewOrder(string name, string surname, int kilograms);
 
-        public event ChangeClients OnChangeClients
-        {
-            add
-            {
-                _onChangeClients += value;
-                JournalOfEvents.AddEvent("OnChangeClients", value.Method.Name);
-            }
-            remove
-            {
-                _onChangeClients -= value;
-                JournalOfEvents.RemoveEvent("OnChangeClients", value.Method.Name);
-            }
-        }
+        public event ChangeClients OnChangeClients;
+        //{
+        //    add
+        //    {
+        //        _onChangeClients += value;
+        //        JournalOfEvents.AddEvent("OnChangeClients", value.Method.Name);
+        //    }
+        //    remove
+        //    {
+        //        _onChangeClients -= value;
+        //        JournalOfEvents.RemoveEvent("OnChangeClients", value.Method.Name);
+        //    }
+        //}
 
-        public event ChangeRates OnChangeRate
-        {
-            add
-            {
-                _onChangeRate += value;
-                JournalOfEvents.AddEvent("OnChangeRate", value.Method.Name);
-            }
-            remove
-            {
-                _onChangeRate -= value;
-                JournalOfEvents.RemoveEvent("OnChangeRate", value.Method.Name);
-            }
-        }
+        public event ChangeRates OnChangeRate;
+        //{
+        //    add
+        //    {
+        //        _onChangeRate += value;
+        //        JournalOfEvents.AddEvent("OnChangeRate", value.Method.Name);
+        //    }
+        //    remove
+        //    {
+        //        _onChangeRate -= value;
+        //        JournalOfEvents.RemoveEvent("OnChangeRate", value.Method.Name);
+        //    }
+        //}
 
-        public event NewOrder OnNewOrder
-        {
-            add
-            {
-                _onNewOrder += value;
-                JournalOfEvents.AddEvent("OnNewOrder", value.Method.Name);
-            }
-            remove
-            {
-                _onNewOrder -= value;
-                JournalOfEvents.RemoveEvent("OnNewOrder", value.Method.Name);
-            }
-        }
+        public event NewOrder OnNewOrder;
+        //{
+        //    add
+        //    {
+        //        _onNewOrder += value;
+        //        JournalOfEvents.AddEvent("OnNewOrder", value.Method.Name);
+        //    }
+        //    remove
+        //    {
+        //        _onNewOrder -= value;
+        //        JournalOfEvents.RemoveEvent("OnNewOrder", value.Method.Name);
+        //    }
+        //}
         public Journal JournalOfEvents { get; set; }
         public void Order(string name, string surname, int kilograms)
         {
-            _onNewOrder(name, surname, kilograms);
+            OnNewOrder?.Invoke(name, surname, kilograms);
             Client cl = _clients.Find(new Client(name, surname));
             if (cl == null)
             {
                 cl = new Client(name, surname);
-                _onChangeClients?.Invoke(cl.Name, cl.Surname);
+                OnChangeClients?.Invoke(cl.Name, cl.Surname); 
             }
             if (kilograms < 1000)
             {
                 cl.Rate = Rates.EVERYDAY;
                 cl.Sum = _pricePerKG * kilograms * (1 - _discountForEverydayRate);
-                _onChangeRate?.Invoke(cl.Name, cl.Surname, "Everyday");
+                OnChangeRate?.Invoke(cl.Name, cl.Surname, "Everyday");
             }
             else
             {
                 cl.Rate = Rates.PROFITABLY;
                 cl.Sum = _pricePerKG * kilograms * (1 - _discountForProfitablyRate);
-                _onChangeRate?.Invoke(cl.Name, cl.Surname, "Profitably");
+                OnChangeRate?.Invoke(cl.Name, cl.Surname, "Profitably");
             }
             _clients.Add(cl);
             Console.WriteLine($"Total sum - {TotalSum}");

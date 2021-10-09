@@ -68,11 +68,11 @@ namespace _053506_Ermolaev_Lab7
             _orders.Add(order);
         }
 
-        public IEnumerable<Order> GetEverydayOrders()
+        public IEnumerable<(string Name, double Sum )> GetEverydayOrders()
         {
-            var ordersWithEveryday = _orders.GroupBy(or => or.Rate).Where(or => or.Key == "Everyday");
-            IEnumerable<Order> orders = ordersWithEveryday.SelectMany(group => group);
-            return orders;
+            return _orders.GroupBy(or => or.Rate)
+                .Select(g => ( Name = g.Key, Sum = g.Sum(ord => ord.Sum) ))
+                .ToList();                
         }
 
         public IEnumerable<Order> GetProfitablyOrders()

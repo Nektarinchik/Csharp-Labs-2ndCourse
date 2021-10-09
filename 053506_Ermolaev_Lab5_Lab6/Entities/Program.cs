@@ -13,8 +13,8 @@ namespace _053506_Ermolaev_Lab5
             };
 
 
-            IEErmolaev.OnChangeClients += IEErmolaev.JournalOfEvents.InfAboutNewClient;
-            IEErmolaev.OnChangeRate += IEErmolaev.JournalOfEvents.InfAboutNewRate;
+            IEErmolaev.OnChangeClients += journal.InfAboutNewClient;
+            IEErmolaev.OnChangeRate += journal.InfAboutNewRate;
 
 
             IEErmolaev.OnNewOrder += (name, surname, kg) =>
@@ -29,7 +29,7 @@ namespace _053506_Ermolaev_Lab5
             IEErmolaev.Order("Nikita", "Ermolaev", 2500);
             IEErmolaev.PrintClients();
 
-            IEErmolaev.JournalOfEvents.PrintEvents();
+            journal.PrintEvents();
         }
     }
 }

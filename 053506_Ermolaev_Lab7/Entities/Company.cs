@@ -101,7 +101,11 @@ namespace _053506_Ermolaev_Lab7
 
         public int GetCountOfMostCostClients(double sum)
         {
-            return (from cl in _clients where cl.Sum >= sum select cl).Count();
+            return _clients.Aggregate(0, (a, client) => a += client.Sum > sum ? 1 : 0);
+
+            //return (from cl in _clients 
+             //       where cl.Sum >= sum 
+             //       select cl).Count();
         }
         public double TotalSum
         {
@@ -129,7 +133,7 @@ namespace _053506_Ermolaev_Lab7
                 Console.WriteLine($"{cl.Name} {cl.Surname} made the following orders at the Everyday rate:");
                 foreach (var or in ordersWithEveryday) 
                 {
-                    Console.WriteLine($"{or.Kilograms} kilograms - {or.Sum}$");
+                    Console.WriteLine($"{or.Name} kilograms - {or.Sum}$");
                 }
                 var ordersWithProfitably = cl.GetProfitablyOrders();
                 Console.WriteLine($"{cl.Name} {cl.Surname} made the following orders at the Profitably rate:");

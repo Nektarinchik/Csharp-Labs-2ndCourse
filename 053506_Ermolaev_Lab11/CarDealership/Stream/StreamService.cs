@@ -8,9 +8,9 @@ namespace Stream
 {
     public class StreamService
     {
-        public async Task WriteToStream(MemoryStream ms, Entities.CarDealership carDeal)
+        public Task WriteToStream(MemoryStream ms, Entities.CarDealership carDeal)
         {
-            await Task.Run(() =>
+            return Task.Run(() =>
             {
                 string fileName = @"C:\Users\MSI\Desktop\Git\Csharp-Labs-2ndCourse\053506_Ermolaev_Lab11"
                     + @"\CarDealership\CarDealership\Files\Dealership.xml";
@@ -29,9 +29,9 @@ namespace Stream
                     $" {Thread.CurrentThread.ManagedThreadId} is over");
             }); 
         }
-        public async Task CopyFromStream(MemoryStream ms, string fileName)
+        public Task CopyFromStream(MemoryStream ms, string fileName)
         {
-            await Task.Run(() =>
+            return Task.Run(() =>
             {
                 if (File.Exists(fileName))
                     File.Delete(fileName);

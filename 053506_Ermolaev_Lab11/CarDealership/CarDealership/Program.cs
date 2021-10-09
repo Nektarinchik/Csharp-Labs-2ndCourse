@@ -24,7 +24,7 @@ namespace CarDealership
 
             Stream.StreamService streamServ = new Stream.StreamService();
 
-            using(MemoryStream ms = new MemoryStream())
+            using (MemoryStream ms = new MemoryStream())
             {
                 await streamServ.WriteToStream(ms, carDeal);
 
